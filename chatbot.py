@@ -1,10 +1,7 @@
 import os
-from dotenv import load_dotenv
 import google.generativeai as genai
 
-load_dotenv()
-
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
 SYSTEM_PROMPT = (
     "You are a friendly customer support chatbot for an e-commerce website. "
